@@ -21,26 +21,54 @@ public class Execucao {
 		
 		try {
 			int dis = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantas disciplinas voce possui?"));
-			String disciplinas[] = new String[100];
+			String disciplinas[] = new String[dis];
 			for (int i = 0; i < dis; i++) {
 				disciplinas[i] = JOptionPane.showInputDialog(null, "Digite a disciplina" + i);
 			}
 			professor.setDisciplinas(disciplinas);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		try {
 			int cur = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantos cursos voce possui?"));
-			String cursos[] = new String[100];
-			for (int i = 0; i < cur; i++) {
+			String cursos[] = new String[cur];
+			for (int i = 0; i < cursos.length; i++) {
 				cursos[i] = JOptionPane.showInputDialog(null, "Digite o curso" + i);
+				System.out.println(cursos[i]);
 			}
-			professor.setDisciplinas(cursos);
+			professor.setCursos(cursos);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+		System.out.println(professor.getNome());
+		System.out.println(professor.getEndereco());
+		System.out.println(professor.getBairro());
+		System.out.println(professor.getCep());
+		System.out.println(professor.getCidade());
+		System.out.println(professor.getEstado());
+		System.out.println(professor.getRg());
+		System.out.println(professor.getCpf());
+		
+		
+		try {
+			for(int i=0; i < professor.getDisciplinas().length; i++) {
+				System.out.println(professor.getDisciplinas()[i]);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			for(int i=0; i < professor.getCursos().length; i++) {
+				System.out.println(professor.getCursos()[i]);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
+	
 	
 }
